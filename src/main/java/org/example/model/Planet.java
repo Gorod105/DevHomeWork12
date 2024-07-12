@@ -1,8 +1,5 @@
 package org.example.model;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,7 +16,8 @@ public class Planet {
     @Id
     @Pattern(regexp = "[A-Z,0-9]{1,255}")
     @Column(columnDefinition = "planet_id")
-    String id;
+    private String id;
     @Column (name = "name")
-    String name;
+    private String name;
+
 }

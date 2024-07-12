@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -19,4 +22,6 @@ public class Client {
     Long id;
     @Column(name = "name")
     String name;
+    @OneToMany(mappedBy = "client")
+    private List<Ticket> ticket = new ArrayList<>();
 }
